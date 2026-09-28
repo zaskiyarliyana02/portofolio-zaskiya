@@ -556,30 +556,33 @@
         </div>
     </footer>
     <!-- JavaScript Handlers -->
-    <!-- JavaScript Handlers -->
     <script>
         // Modal Sertifikat
         function openCredentialModal(imageSrc, titleText) {
             const modal = document.getElementById('credentialModal');
             const imgElement = document.getElementById('credentialModalImg');
             const titleElement = document.getElementById('credentialModalTitle');
+            
             imgElement.src = imageSrc;
             titleElement.innerText = titleText;
+            
             imgElement.onerror = function() {
                 alert("Gagal memuat gambar! Pastikan nama file dan lokasi gambar sudah sesuai: " + imageSrc);
             };
+            
             modal.classList.remove('hidden');
             modal.classList.add('flex');
             document.body.style.overflow = 'hidden';
         }
+
         function closeCredentialModal() {
             const modal = document.getElementById('credentialModal');
             modal.classList.remove('flex');
             modal.classList.add('hidden');
             document.body.style.overflow = 'auto';
         }
+
         // Modal Project Details Data & Functions
-       // Modal Project Details Data & Functions
         const projectData = {
             seatup: {
                 category: "WEB PLATFORM",
@@ -623,7 +626,7 @@
                     "Optimized relational schema for freight and package tracking"
                 ],
                 tech: ["MySQL", "Normalization (3NF)", "ERD", "Database Design"],
-                liveDemo: "#", // Biarkan "#" jika database tidak ada live demonya
+                liveDemo: "#",
                 github: "https://github.com/zaskiyarliyana02/aol-database"
             },
             clashofbang: {
@@ -642,11 +645,52 @@
                 github: "https://github.com/zaskiyarliyana02/clash-of-bang"
             }
         };
-        
+
+        function openProjectDetail(projectId) {
+            const data = projectData[projectId];
+            if (!data) return;
+            
+            document.getElementById('modalCategory').innerText = data.category;
+            document.getElementById('modalTitle').innerText = data.title;
+            document.getElementById('modalDesc').innerText = data.desc;
+            document.getElementById('modalFileName').innerText = data.fileName;
+            document.getElementById('modalCardTitle').innerText = data.title;
+            document.getElementById('modalCardCategorySub').innerText = data.category;
+            document.getElementById('modalFooterCat').innerText = data.category;
+            
+            const highlightsEl = document.getElementById('modalHighlights');
+            highlightsEl.innerHTML = '';
+            data.highlights.forEach(item => {
+                highlightsEl.innerHTML += `<li class="flex items-center gap-2"><span class="text-red-500 font-bold">↳</span> ${item}</li>`;
+            });
+            
+            const techEl = document.getElementById('modalTech');
+            techEl.innerHTML = '';
+            data.tech.forEach(t => {
+                techEl.innerHTML += `<span class="bg-[#1a2233] text-red-400 border border-red-900/30 px-3 py-1 rounded-md text-xs font-mono">${t}</span>`;
+            });
+            
+            document.getElementById('modalLiveDemo').href = data.liveDemo;
+            document.getElementById('modalGithub').href = data.github;
+            
+            const modal = document.getElementById('projectModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeProjectDetail() {
+            const modal = document.getElementById('projectModal');
+            modal.classList.remove('flex');
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
         // Global Event Listener untuk menutup modal saat klik backdrop luar
         window.onclick = function(event) {
             const projectModal = document.getElementById('projectModal');
             const credentialModal = document.getElementById('credentialModal');
+            
             if (event.target === projectModal) {
                 closeProjectDetail();
             }
