@@ -1,0 +1,20 @@
+(function () {
+  var globalScope = typeof self !== 'undefined' ? self : this;
+  if (globalScope.__DEEPL_I18N__) {
+    return;
+  }
+  var store = {
+    bundles: {},
+    listeners: [],
+    push: function (lang, ns, data) {
+      if (!store.bundles[lang]) {
+        store.bundles[lang] = {};
+      }
+      store.bundles[lang][ns] = data;
+      for (var i = 0; i < store.listeners.length; i++) {
+        store.listeners[i](lang, ns, data);
+      }
+    }
+  };
+  globalScope.__DEEPL_I18N__ = store;
+})();;self.__DEEPL_I18N__.push("id","onboarding-survey",{"questionnaireV2_button_primary":"Ayo mulai","questionnaireV2_button_secondary":"Lewati","questionnaireV2_employee-number_answer_100to500":"100-500","questionnaireV2_role-title_answer_cxo":"CxO","questionnaireV2_role-title_answer_director":"Direktur atau Kepala Departemen","questionnaireV2_usage-reasons_answer_document-translation":"Menerjemahkan dokumen","questionnaireV2_usage-reasons_question":"Apa alasan utama Anda menggunakan DeepL?","questionnaireV2_usage-reasons_answer_voice":"Menerjemahkan rekaman suara/audio","questionnaireV2_usage-reasons_answer_reselling":"Menjual kembali DeepL dengan produk atau layanan Anda sendiri","questionnaireV2_usage-reasons_answer_other":"Lainnya","questionnaireV2_usage-reasons_answer_marketing":"Pelokalan pemasaran atau konten","questionnaireV2_usage-reasons_answer_external-communication":"Membenahi komunikasi eksternal dengan pelanggan, partner, atau pemasok.","questionnaireV2_usage-reasons_answer_internal-communication":"Membuat komunikasi internal dengan rekan kerja lebih baik","questionnaireV2_usage-reasons_hint":"Pilih semua yang cocok","questionnaireV2_usage-reasons_answer_white-label":"Menawarkan produk white-label","questionnaireV2_usage-reasons_other_placeholder":"Sebutkan yang lain","questionnaireV2_usage-reasons_placeholder":"Pilih alasan","questionnaireV2_role-title_question":"Jabatan apa yang paling tepat menggambarkan peran Anda di organisasi Anda?","questionnaireV2_role-title_placeholder":"Pilih peran","questionnaireV2_role-title_answer_specialist":"Spesialis atau Kontributor Individual","questionnaireV2_role-title_answer_vp":"VP","questionnaireV2_role-title_answer_manager":"Manajer (misalnya: Kepala Departemen/Kepala Tim)","questionnaireV2_employee-number_question":"Berapa jumlah karyawan yang bekerja di organisasi Anda?","questionnaireV2_employee-number_answer_self-employed":"Pekerja mandiri","questionnaireV2_employee-number_placeholder":"Pilih rentang","questionnaireV2_subheader":"Bantu kami memberikan pengalaman yang lebih relevan bagi Anda.","questionnaireV2_header":"Untuk apa Anda akan menggunakan DeepL?","questionnaireV2_employee-number_answer_lt100":"Kurang dari 100","questionnaireV2_employee-number_answer_500to5000":"500-5000","questionnaireV2_employee-number_answer_gt5000":"Lebih dari 5000"});

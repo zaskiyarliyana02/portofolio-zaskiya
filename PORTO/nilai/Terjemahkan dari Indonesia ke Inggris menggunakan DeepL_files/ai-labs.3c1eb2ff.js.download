@@ -1,0 +1,20 @@
+(function () {
+  var globalScope = typeof self !== 'undefined' ? self : this;
+  if (globalScope.__DEEPL_I18N__) {
+    return;
+  }
+  var store = {
+    bundles: {},
+    listeners: [],
+    push: function (lang, ns, data) {
+      if (!store.bundles[lang]) {
+        store.bundles[lang] = {};
+      }
+      store.bundles[lang][ns] = data;
+      for (var i = 0; i < store.listeners.length; i++) {
+        store.listeners[i](lang, ns, data);
+      }
+    }
+  };
+  globalScope.__DEEPL_I18N__ = store;
+})();;self.__DEEPL_I18N__.push("id","ai-labs",{"ai_labs_home_experience_banner_headline":"DeepL AI labs","aiLabs_sharing_section_headline":"Bagikan","aiLabs_banner_new_tag":"Baru","ai_labs_home_experience_banner_subheadline":"Lihat pengembangan terbaru tim riset DeepL!","ai_labs_back_button":"DeepL AI Labs","ai_labs_back_button_aria":"Kembali ke halaman utama","ai_labs_home_experience_banner_cta_label":"Pelajari lebih lanjut","aiLabs_footer_aria_label":"Navigasi footer","aiLabs_footer_navigation_label":"Footer","aiLabs_header_desktop_navigation_label":"Navigasi","aiLabs_header_logo_alt":"Logo DeepL AI Labs - Buka halaman utama","aiLabs_footer_image_alt":"Gambar footer AI Labs berupa aneka kubus warna-warni","aiLabs_footer_instagram":"Instagram","aiLabs_footer_terms":"Istilah","aiLabs_footer_github":"GitHub","aiLabs_footer_deepl_api":"DeepL API","aiLabs_footer_deepl_voice":"DeepL Voice","aiLabs_footer_publisher":"Penerbit","aiLabs_footer_deepl_write":"DeepL Write","aiLabs_footer_twitter":"X","aiLabs_footer_deepl_apps":"Aplikasi & Integrasi","aiLabs_footer_deepl_translator":"DeepL Translator","aiLabs_footer_external_link_indicator":"Tombol Tautan Eksternal","aiLabs_sharing_link_indicator":"Tautan Berbagi","aiLabs_footer_social_media_heading":"Media sosial","aiLabs_footer_products":"Produk DeepL","aiLabs_footer_privacy_policy":"Kebijakan Privasi","aiLabs_footer_linkedin":"LinkedIn","aiLabs_footer_careers":"Karier","aiLabs_footer_company":"Perusahaan","aiLabs_banner_text_end":"dan lihat inovasi produk mendatang","aiLabs_banner_text_start":"Lihat","aiLabs_banner_text_link":"DeepL AI Labs","aiLabs_banner_logo_alt":"Logo AI Labs - Buka halaman AI Labs","aiLabs_banner_ariaLabel_close":"Tutup tombol banner AI Labs","aiLabs_header_ariaLabel_burger_menu":"Buka menu tumpuk untuk navigasi","aiLabs_header_ariaLabel_go_to_deepl_button":"Buka halaman deepl.com","aiLabs_header_go_to_deepl_button_text":"Buka deepl.com","aiLabs_header_ariaLabel_projects_button":"Buka halaman proyek","aiLabs_header_projects_button_text":"Proyek","aiLabs_banner_ariaLabel_link":"Tautan - Kunjungi halaman AI Labs","aiLabs_audio_player_controls_group_label":"Kontrol audio","aiLabs_audio_player_toolbar_label":"Kontrol pemutar audio","aiLabs_audio_player_region_label":"Pemutar audio","aiLabs_audio_player_progress_label":"Kemajuan audio","aiLabs_audio_player_mute_button_label":"Senyapkan audio","aiLabs_audio_player_unmute_button_label":"Bunyikan audio","aiLabs_audio_player_time_label":"Waktu: {{current}} dari {{total}}","aiLabs_audio_player_pause_button_label":"Jeda audio","aiLabs_footer_about_us":"Tentang Kami","aiLabs_audio_player_play_button_label":"Putar audio","aiLabs_audio_player_language_label":"Bahasa: {{language}}","aiLabs_audio_player_file_label":"Berkas audio: {{filename}}","ai_labs_learn_more_cta":"Pelajari lebih lanjut","aiLabs_related_content_headline":"Lihat berbagai proyek terbaru dari tim Riset kami."});

@@ -1,0 +1,4 @@
+;!function(){try { var e="undefined"!=typeof globalThis?globalThis:"undefined"!=typeof global?global:"undefined"!=typeof window?window:"undefined"!=typeof self?self:{},n=(new e.Error).stack;n&&((e._debugIds|| (e._debugIds={}))[n]="b95f63a1-0033-1350-4b2c-e2528715ade2")}catch(e){}}();
+(globalThis.TURBOPACK||(globalThis.TURBOPACK=[])).push(["object"==typeof document?document.currentScript:void 0,831924,e=>{e.v(i=>Promise.all(["static/chunks/2_kmdciq7n2lr.js"].map(i=>e.l(i))).then(()=>i(877525)))},475311,e=>{"use strict";var i=e.i(843476),t=e.i(500932),s=e.i(134511),l=e.i(512134),n=e.i(271645);let o=n.default.lazy(()=>e.A(831924));e.s(["AppStoreBanners",0,()=>{let e,r=(0,t.c)(2),c=(0,l.useIsClient)();return r[0]!==c?(e=c&&((0,s.isMobilePhone)()||(0,s.isTabletWithAppStore)())?(0,i.jsx)(n.Suspense,{children:(0,i.jsx)(o,{})}):null,r[0]=c,r[1]=e):e=r[1],e}])},906192,function(e){e.n(e.i(475311))}]);
+
+//# debugId=b95f63a1-0033-1350-4b2c-e2528715ade2

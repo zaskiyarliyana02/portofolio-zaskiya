@@ -1,0 +1,20 @@
+(function () {
+  var globalScope = typeof self !== 'undefined' ? self : this;
+  if (globalScope.__DEEPL_I18N__) {
+    return;
+  }
+  var store = {
+    bundles: {},
+    listeners: [],
+    push: function (lang, ns, data) {
+      if (!store.bundles[lang]) {
+        store.bundles[lang] = {};
+      }
+      store.bundles[lang][ns] = data;
+      for (var i = 0; i < store.listeners.length; i++) {
+        store.listeners[i](lang, ns, data);
+      }
+    }
+  };
+  globalScope.__DEEPL_I18N__ = store;
+})();;self.__DEEPL_I18N__.push("id","common",{"component_fileUpload_label":"Telusuri","component_infoIcon_about":"Tentang","component_infoIcon_help":"Bantuan","no":"Tidak","clearance_requestFailed":"Maaf, ada masalah pemeriksaan keamanan, dan permintaan ke clearance.deepl.com\n    gagal. Harap coba lagi atau hubungi administrator Anda. Periksa{{helpCenterLinkOpen}}Pusat Bantuan\n    {{helpCenterLinkClose}}\n    kami jika masih ada masalah.","reviewFlow_requestReview":"Minta tinjauan","reviewFlow_requestReview_withFileName":"Minta tinjauan atas {{fileName}}","pdfViewer_openNewTab":"Buka PDF di tab baru","pdfViewer_troubleText":"Mengalami kesulitan membuka dokumen?","save":"Simpan","cancel":"Batalkan","searchButton":"Cari","clearance_ipMismatch":"Maaf, pemeriksaan keamanan gagal karena ketidaksesuaian alamat IP saat mencoba masuk\n    (panggilan ke clearance.deepl.com berasal dari IP yang berbeda). Harap coba lagi atau hubungi administrator Anda.\n    Periksa{{helpCenterLinkOpen}}Pusat Bantuan\n    {{helpCenterLinkClose}}\n    kami jika masih ada masalah.","component_password_strength_info":"Kata sandi yang aman terdiri dari minimal <strong>{{minLength}}</strong> karakter dan\n    mengandung <strong>huruf kecil</strong>, <strong>huruf besar</strong>, <strong>angka</strong>, dan\n    <strong>karakter khusus (misalnya !@#$%)</strong>","component_password_visibility_button":"Menampilkan atau menyembunyikan kata sandi","component_internalSearch_apiDocumentation":"Dokumentasi API","formattedTimestamp_justNow":"baru saja","formattedTimestamp_today":"hari ini","formattedTimestamp_yesterday":"kemarin","contextMenu_shortcutHint_macos":"Tekan tombol Opsi+F10 untuk membuka menu konteks pada posisi kursor Anda","component_internalSearch_lookingForSomethingElse":"Mencari hal yang lain?","component_fallback_banner_title":"Halaman ini tidak tersedia dalam bahasa Anda saat ini.","component_internalSearch_stillLooking":"Masih mencari? Coba sumber-sumber berikut ini:","component_internalSearch_showMoreResults":"Tampilkan lebih banyak hasil","component_internalSearch_searchOurWebsite":"Cari di situs web kami","component_internalSearch_searchPlaceholder":"Cari...","component_internalSearch_results":"Hasil ({{numberOfResults}})","component_internalSearch_noItemsMatch":"Maaf, tidak ada hasil yang cocok dengan\n    <b>\n      {{searchTerm}}\n    </b>\n    . Silakan masukkan istilah pencarian yang berbeda.","component_internalSearch_search":"Cari","component_internalSearch_helpCenter":"Pusat bantuan","component_internalSearch_close":"Tutup","component_password_strength":"Keamanan kata sandi","yes":"Ya","selected":"Terpilih","openingQuotationMark":"“","closingQuotationMark":"”","input_fileUpload_label":"Telusuri","badge_beta":"BETA","playButton":"Putar","contextMenu_label":"Menu konteks","contextMenu_shortcutHint":"Tekan Alt+F10 untuk membuka menu konteks di posisi kursor Anda","reviewFlow_inviteToReview":"Undang untuk Memberikan Ulasan kepada Pemeriksa"});
