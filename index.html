@@ -579,6 +579,7 @@
             document.body.style.overflow = 'auto';
         }
         // Modal Project Details Data & Functions
+       // Modal Project Details Data & Functions
         const projectData = {
             seatup: {
                 category: "WEB PLATFORM",
@@ -592,8 +593,8 @@
                     "Optimized user flow reducing booking friction"
                 ],
                 tech: ["UI/UX Design", "Figma", "Front-End", "HTML5", "CSS3"],
-                liveDemo: "https://www.figma.com/proto/ozE6WIQhkbDOqlyw346wXb/HCI-LEC?node-id=0-1&t=ueZHINg5prlhFLh2-1",
-                github: "https://github.com/username/seatup-project"
+                liveDemo: "https://www.figma.com/proto/ozE6WIQhkbDOqlyw346wXb/HCI-LEC?node-id=0-1&t=ueZHINg5prlhFLh2-1", 
+                github: "https://github.com/zaskiyarliyana02/seat"
             },
             terradrop: {
                 category: "IOT & AI SYSTEM",
@@ -607,8 +608,8 @@
                     "Maximum water conservation and automated valve control"
                 ],
                 tech: ["HTML-5", "UI/UX Design", "Prototyping", "ESP32", "Sensors"],
-                liveDemo: "https://your-terradrop-demo.com",
-                github: "https://github.com/username/terradrop-iot"
+                liveDemo: "https://zaskiyarliyana02.github.io/terradrop/",
+                github: "https://github.com/zaskiyarliyana02/terradrop"
             },
             database: {
                 category: "DATABASE TECHNOLOGY",
@@ -622,8 +623,8 @@
                     "Optimized relational schema for freight and package tracking"
                 ],
                 tech: ["MySQL", "Normalization (3NF)", "ERD", "Database Design"],
-                liveDemo: "https://your-database-demo.com",
-                github: "https://github.com/username/freight-logistics-db"
+                liveDemo: "#", // Biarkan "#" jika database tidak ada live demonya
+                github: "https://github.com/zaskiyarliyana02/aol-database"
             },
             clashofbang: {
                 category: "COMMUNITY PLATFORM",
@@ -637,43 +638,11 @@
                     "Responsive design optimized for smooth cross-device navigation"
                 ],
                 tech: ["Web Design", "HCI", "User Experience", "HTML5", "CSS3"],
-                liveDemo: "https://your-clashofbang-demo.com",
-                github: "https://github.com/username/clash-of-bang"
+                liveDemo: "https://zaskiyarliyana02.github.io/clash-of-bang/",
+                github: "https://github.com/zaskiyarliyana02/clash-of-bang"
             }
         };
-        function openProjectDetail(projectId) {
-            const data = projectData[projectId];
-            if (!data) return;
-            document.getElementById('modalCategory').innerText = data.category;
-            document.getElementById('modalTitle').innerText = data.title;
-            document.getElementById('modalDesc').innerText = data.desc;
-            document.getElementById('modalFileName').innerText = data.fileName;
-            document.getElementById('modalCardTitle').innerText = data.title;
-            document.getElementById('modalCardCategorySub').innerText = data.category;
-            document.getElementById('modalFooterCat').innerText = data.category;
-            const highlightsEl = document.getElementById('modalHighlights');
-            highlightsEl.innerHTML = '';
-            data.highlights.forEach(item => {
-                highlightsEl.innerHTML += `<li class="flex items-center gap-2"><span class="text-red-500 font-bold">↳</span> ${item}</li>`;
-            });
-            const techEl = document.getElementById('modalTech');
-            techEl.innerHTML = '';
-            data.tech.forEach(t => {
-                techEl.innerHTML += `<span class="bg-[#1a2233] text-red-400 border border-red-900/30 px-3 py-1 rounded-md text-xs font-mono">${t}</span>`;
-            });
-            document.getElementById('modalLiveDemo').href = data.liveDemo;
-            document.getElementById('modalGithub').href = data.github;
-            const modal = document.getElementById('projectModal');
-            modal.classList.remove('hidden');
-            modal.classList.add('flex');
-            document.body.style.overflow = 'hidden';
-        }
-        function closeProjectDetail() {
-            const modal = document.getElementById('projectModal');
-            modal.classList.remove('flex');
-            modal.classList.add('hidden');
-            document.body.style.overflow = 'auto';
-        }
+        
         // Global Event Listener untuk menutup modal saat klik backdrop luar
         window.onclick = function(event) {
             const projectModal = document.getElementById('projectModal');
